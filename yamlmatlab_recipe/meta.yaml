@@ -1,0 +1,30 @@
+{% set version = "master" %}
+
+package:
+  name: yamlmatlab
+  version: {{ version }}
+
+source:
+  - git_url: https://github.com/ewiger/yamlmatlab.git
+#    git_rev: v{{ version }}
+    folder: src
+
+build:
+  number: 0
+  noarch: generic
+
+#requirements:
+#  build:
+#    - python >=3.6
+
+#test:
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+about:
+  home: https://github.com/ewiger/yamlmatlab
+  license: MIT
+  summary:
+    Java-based implementation of YAML IO support in MATLAB.
+
+  

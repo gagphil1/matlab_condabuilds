@@ -1,0 +1,35 @@
+{% set version = "master" %}
+
+package:
+  name: pdollar
+  version: {{ version }}
+
+source:
+  - git_url: https://github.com/pdollar/toolbox.git
+#    git_rev: v{{ version }}
+
+build:
+  number: 0
+  noarch: generic
+  binary_relocation: False
+  ignore_prefix_files: True
+
+  script_env:
+  - MATLAB_ROOT_DIR
+
+#requirements:
+#  build:
+#    - python >=3.6
+
+#test:
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+about:
+  home: https://github.com/pdollar/toolbox
+  license: simplified BSD License
+  license_family: BSD
+  summary:
+    P Dollar's functions for image processing.
+
+  

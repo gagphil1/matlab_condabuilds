@@ -1,0 +1,48 @@
+{% set version = "4ca1f193603c69bfac608a125a2a62057d9ed46d" %}
+
+package:
+  name: histthresh
+  version: master
+
+source:
+  - git_url: https://github.com/gagphil1/histthresh.git
+#    git_rev: {{ version }}
+    folder: src
+
+  # - path: mex_compile.m
+
+build:
+  number: 1
+  noarch: generic
+  binary_relocation: False
+  ignore_prefix_files: True
+
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+#requirements:
+#  build:
+#    - python >=3.6
+
+#test:
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+about:
+  home: hhttps://github.com/carandraug/histthresh
+  license: GPLv3+
+  license_family: GPL
+  summary: Selected histogram-based thresholding algorithms for Matlab.
+  description: |
+    This Matlab toolbox was originally authored by Antti Niemistö who
+    released it under GPLv2+ during his PhD at Tampere University of
+    Technology, Finland.
+
+     It has been ported to ImageJ 1.X by Gabriel Landini, partially picked
+     up by Wayne Rasband, and based on Gabriel's port, Barry DeZonia ported it
+     to ImageJ 2 (under the 2-clause BSD license).
+
+     There is also an Octave port, as optional argument to graythresh() in the
+     image package, prepared by Carnë Draug.
+
+  

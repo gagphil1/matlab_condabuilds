@@ -1,0 +1,30 @@
+{% set version = "0.9.21" %}
+
+package:
+  name: vlfeat
+  version: {{ version }}
+
+source:
+  - git_url: https://github.com/vlfeat/vlfeat.git
+    git_rev: v{{ version }}
+
+  - path: vlfeat_setup.m
+  - path: local_Makefile.mak
+
+build:
+  number: 1
+
+requirements:
+  build:
+  - vc 14            # [win64]
+
+  run:
+  - vs2015_runtime   # [win64]
+
+test:
+  commands: 
+    - sift -h
+
+about:
+  home: http://www.vlfeat.org/
+  license: BSD

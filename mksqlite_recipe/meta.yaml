@@ -1,0 +1,36 @@
+{% set version = "2.7" %}
+
+package:
+  name: mksqlite
+  version: {{ version }}
+
+source:
+  - git_url: https://git.code.sf.net/p/mksqlite/code_git
+    git_rev: {{ version }}
+
+build:
+  number: 0
+
+  script_env:
+  - MATLAB_ROOT_DIR
+
+requirements:
+  build:
+  - cmake
+  - vc 14            # [win64]
+
+  run:
+   - vs2015_runtime   # [win64]
+
+#test:
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+about:
+  home: http://mksqlite.sourceforge.net/
+#  license: simplified BSD License
+#  license_family: BSD
+  summary:
+    A MATLAB interface to SQLite
+
+  

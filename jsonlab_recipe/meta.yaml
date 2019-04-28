@@ -1,0 +1,36 @@
+{% set version = "1.8" %}
+
+package:
+  name: jsonlab
+  version: {{ version }}
+
+source:
+  - git_url: https://github.com/fangq/jsonlab.git
+    git_rev: v{{ version }}
+    folder: src
+
+build:
+  number: 1
+  noarch: generic
+  binary_relocation: False
+  ignore_prefix_files: True
+
+  script_env:
+  - MATLAB_ROOT_DIR
+
+#requirements:
+#  build:
+#    - python >=3.6
+
+#test:
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+about:
+  home: https://github.com/fangq/jsonlab
+  license:  BSD License
+  license_family: BSD
+  summary:
+    An open-source MATLAB/Octave JSON encoder and decoder.
+
+  

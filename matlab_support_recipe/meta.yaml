@@ -1,0 +1,33 @@
+{% set version = "0.1" %}
+
+package:
+  name: matlab_support
+  version: {{ version }}
+
+source:
+  - git_url: https://github.com/fangq/jsonlab.git
+    git_rev: v1.8
+    folder: jsonlab
+
+  - path: env_setup.m
+
+  - path: scripts
+    folder: scripts
+
+build:
+  number: 6
+  noarch: generic
+  binary_relocation: False
+  ignore_prefix_files: True
+
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+about:
+  home: https://github.com/gagphil1
+  license: simplified BSD License
+  license_family: BSD
+  summary:
+    Support files for Matlab packages.
+
+  

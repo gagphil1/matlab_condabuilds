@@ -1,0 +1,37 @@
+{% set version = "master" %}
+
+package:
+  name: matgeom
+  version: {{ version }}
+
+source:
+  - git_url: https://github.com/mattools/matGeom.git
+#    git_rev: v{{ version }}
+    folder: src
+
+  - path: matgeom_setup.m
+
+build:
+  number: 4
+  noarch: generic
+
+requirements:
+  build:
+    - python >=3.6
+
+#test:
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+about:
+  home: http://github.com/mattools/matGeom
+  license: simplified BSD License
+  license_family: BSD
+  summary:
+    Matlab geometry toolbox for 2D/3D geometric computing.
+  description:
+    MatGeom is a library for geometric computing with Matlab in 2D and 3D. It
+    contains several hundreds of functions for the creation and manipulation of
+    2D and 3D shapes such as point sets, lines, polygons, 3D meshes, ellipses...
+  doc_url: https://github.com/mattools/matGeom/wiki
+  

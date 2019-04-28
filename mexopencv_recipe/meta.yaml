@@ -1,0 +1,46 @@
+{% set version = "3.4.1" %}
+
+package:
+  name: mexopencv
+  version: {{ version }}
+
+source:
+  - git_url: https://github.com/kyamagu/mexopencv.git
+    git_rev: v{{ version }}
+    patches: patch-mex-options.patch
+
+
+  - path: mex_compile.m
+    
+build:
+  number: 1
+
+  script_env:
+  - MATLAB_ROOT_DIR
+
+requirements:
+  build:
+    - libopencv =3.4.1
+    - m2_patch      # [win64]
+  
+  run:
+    - libopencv =3.4.1
+
+#test:
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+about:
+  home: https://github.com/kyamagu/mexopencv
+  license: BSD 3-clause
+  license_family: BSD
+  summary:
+    Collection and development kit of MATLAB MEX functions for OpenCV library.
+  description:
+    mexopencv provides MATLAB MEX functions that interface with hundreds of
+    OpenCV APIs. Also the package contains a C++ class that converts between
+    MATLAB's native data type and OpenCV data types. The package is suitable for
+    fast prototyping of OpenCV application in MATLAB, use of OpenCV as an
+    external toolbox in MATLAB, and development of custom MEX functions.
+  doc_url: https://github.com/kyamagu/mexopencv/wiki
+  

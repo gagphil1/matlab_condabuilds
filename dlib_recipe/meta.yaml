@@ -1,0 +1,41 @@
+{% set version = "19.16" %}
+
+package:
+  name: dlib
+  version: {{ version }}
+
+source:
+  - git_url: https://github.com/davisking/dlib.git
+    git_rev: v{{ version }}
+
+build:
+  number: 0
+
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+requirements:
+  build:
+  - python
+  - numpy
+  - cmake
+  - m2-filesystem    # [win]
+  - m2w64-pkg-config # [win]
+
+  run:
+  - python
+  - numpy
+
+#test:
+#  script_env:
+#  - MATLAB_ROOT_DIR
+
+about:
+  home: https://github.com/davisking/dlib
+  license: simplified BSD License
+  license_family: BSD
+  summary:
+    Dlib is a modern C++ toolkit containing machine learning algorithms and
+    tools for creating complex software in C++ to solve real world problems. 
+
+  

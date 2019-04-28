@@ -1,0 +1,45 @@
+{% set version = "master" %}
+#{% set version = "3.0.12" %}
+
+package:
+    name: mwrap
+    version: {{ version }}
+
+source:
+    git_url: https://github.com/zgimbutas/mwrap.git
+    git_rev: {{ version }}
+#    git_rev: rel-{{ version }}
+
+build:
+    number: '0'
+
+requirements:
+    build:
+#      - vc 14            # [win]
+      - make    # [unix]
+      - flex    # [unix]
+      - bison   # [unix]
+      - m2-base  # [win]
+      - m2-make    # [win]
+      - m2-flex    # [win]
+      - m2-bison   # [win]
+      - m2w64-toolchain # [win64]
+
+#    run:
+#      - vs2017_runtime   # [win]
+
+#test:
+#    commands:
+#        - swig -version
+
+about:
+    description: ...
+
+    dev_url: https://github.com/swig/swig
+    doc_url: http://www.swig.org/Doc3.0/index.html
+    home: http://www.swig.org/
+    license: GPL 3
+    license_family: GPL
+    summary: Matlab/Ocatve code generator
+
+
