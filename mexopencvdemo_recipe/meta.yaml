@@ -1,0 +1,364 @@
+{% set version = "3.4.1" %}
+
+package:
+  name: mexopencvdemo
+  version: {{ version }}
+
+source:
+  - url: https://github.com/opencv/opencv/raw/3.4.0/samples/dnn/face_detector/deploy.prototxt
+    folder: test/dnn/ResNetSSD_FaceDetector
+    fn: deploy.prototxt
+    sha1: 006baf926232df6f6332defb9c24f94bb9f3764e
+    
+  - url: https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel
+    folder: test/dnn/ResNetSSD_FaceDetector
+    fn: res10_300x300_ssd_iter_140000.caffemodel
+    sha1: 15aa726b4d46d9f023526d85537db81cbc8dd566
+
+  - url: https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20180205_fp16/res10_300x300_ssd_iter_140000_fp16.caffemodel
+    folder: test/dnn/ResNetSSD_FaceDetector
+    fn: res10_300x300_ssd_iter_140000_fp16.caffemodel
+    sha1: 31fc22bfdd907567a04bb45b7cfad29966caddc1
+
+  - url: https://github.com/BVLC/caffe/raw/master/models/bvlc_alexnet/deploy.prototxt
+    folder: test/dnn/AlexNet
+    fn: deploy.prototxt
+    sha1: cb77655eb4db32c9c47699c6050926f9e0fc476a
+
+  - url: http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel
+    folder: test/dnn/AlexNet
+    fn: bvlc_alexnet.caffemodel
+    sha1: 9116a64c0fbe4459d18f4bb6b56d647b63920377
+
+  - url: https://github.com/opencv/opencv/raw/3.4.0/samples/dnn/face_detector/deploy.prototxt
+    folder: test/dnn/ResNetSSD_FaceDetector
+    fn: deploy.prototxt
+    sha1: 006baf926232df6f6332defb9c24f94bb9f3764e
+
+  - url: https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel
+    folder: test/dnn/ResNetSSD_FaceDetector
+    fn: res10_300x300_ssd_iter_140000.caffemodel
+    sha1: 15aa726b4d46d9f023526d85537db81cbc8dd566
+
+  - url: https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20180205_fp16/res10_300x300_ssd_iter_140000_fp16.caffemodel
+    folder: test/dnn/ResNetSSD_FaceDetector
+    fn: res10_300x300_ssd_iter_140000_fp16.caffemodel
+    sha1: 31fc22bfdd907567a04bb45b7cfad29966caddc1
+
+  - url: https://storage.cmusatyalab.org/openface-models/nn4.small2.v1.t7
+    folder: test/dnn/OpenFace
+    fn: nn4.small2.v1.t7
+    sha1: ac8161a4376fb5a79ceec55d85bbb57ef81da9fe
+
+  - url: https://github.com/BVLC/caffe/raw/master/models/bvlc_reference_caffenet/deploy.prototxt
+    folder: test/dnn/CaffeNet
+    fn: deploy.prototxt
+    sha1: 6a40fd8b77233afee8fd525ce59bb4ccaae78d58
+
+  - url: http://dl.caffe.berkeleyvision.org/bvlc_reference_caffenet.caffemodel
+    folder: test/dnn/CaffeNet
+    fn: bvlc_reference_caffenet.caffemodel
+    sha1: 4c8d77deb20ea792f84eb5e6d0a11ca0a8660a46
+
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/synset_words.txt
+    folder: test/dnn/CaffeNet
+    fn: synset_words.txt
+
+  - url: https://gist.githubusercontent.com/ksimonyan/211839e770f7b538e2d8/raw/0067c9b32f60362c74f4c445a080beed06b07eb3/VGG_ILSVRC_16_layers_deploy.prototxt
+    folder: test/dnn/VGGNet
+    fn: VGG_ILSVRC_16_layers_deploy.prototxt
+    sha1: 2734e5500f1445bd7c9fee540c99f522485247bd
+
+  - url: http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_16_layers.caffemodel
+    folder: test/dnn/VGGNet
+    fn: VGG_ILSVRC_16_layers.caffemodel
+    sha1: 9363e1f6d65f7dba68c4f27a1e62105cdf6c4e24
+
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/synset_words.txt
+    folder: test/dnn/VGGNet
+    fn: synset_words.txt
+
+  - url: https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip
+    folder: test/dnn/Inception/
+    # file = test/dnn/Inception/tensorflow_inception_graph.pb
+    # file = test/dnn/Inception/imagenet_comp_graph_label_strings.txt
+    sha1: e3b84c7e240ce8025b30d868f5e840b4bba9761d
+
+  - url: https://github.com/BVLC/caffe/raw/master/models/bvlc_googlenet/deploy.prototxt
+    folder: test/dnn/GoogLeNet
+    fn: deploy.prototxt
+    sha1: 7060345c8012294baa60eeb5901d2d3fd89d75fc
+
+  - url: http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel
+    folder: test/dnn/GoogLeNet
+    fn: bvlc_googlenet.caffemodel
+    sha1: 405fc5acd08a3bb12de8ee5e23a96bec22f08204
+
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/synset_words.txt
+    folder: test/dnn/GoogLeNet
+    fn: synset_words.txt
+
+  # - url: https://onedrive.live.com/?authkey=%21AAFW2-FVoxeVRck&id=4006CBB8476FF777%2117887&cid=4006CBB8476FF777
+  # - path: ResNet-50-deploy.prototxt
+  #   folder: test/dnn/ResNet
+  #   fn: ResNet-50-deploy.prototxt
+  #   sha1: 5d6fd5aeadd8d4684843c5028b4e5672b9e51638
+
+  # - url: https://onedrive.live.com/?authkey=%21AAFW2-FVoxeVRck&id=4006CBB8476FF777%2117887&cid=4006CBB8476FF777
+  - path: ResNet-50
+    folder: test/dnn/ResNet
+
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/synset_words.txt
+    folder: test/dnn/ResNet
+    fn: synset_words.txt
+
+  - url: https://github.com/DeepScale/SqueezeNet/raw/master/SqueezeNet_v1.0/deploy.prototxt
+    folder: test/dnn/SqueezeNet/v1.0
+    fn: deploy.prototxt
+    sha1: 733249be856b9cd28ce929cd7c41874cf817c3c6
+
+  - url: https://github.com/DeepScale/SqueezeNet/raw/master/SqueezeNet_v1.0/squeezenet_v1.0.caffemodel
+    folder: test/dnn/SqueezeNet/v1.0
+    fn: squeezenet_v1.0.caffemodel
+    sha1: 579d0beb658e43c45937bf8bb5e4034fea4e1f69
+
+  - url: https://github.com/DeepScale/SqueezeNet/raw/master/SqueezeNet_v1.1/deploy.prototxt
+    folder: test/dnn/SqueezeNet/v1.1
+    fn: deploy.prototxt
+    sha1: c226bbaaa4d83e2a3d3727618091e897e5f2e3aa
+
+  - url: https://github.com/DeepScale/SqueezeNet/raw/master/SqueezeNet_v1.1/squeezenet_v1.1.caffemodel
+    folder: test/dnn/SqueezeNet/v1.1
+    fn: squeezenet_v1.1.caffemodel
+    sha1: 3397f026368a45ae236403ccc81cfcbe8ebe1bd0
+
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/synset_words.txt
+    folder: test/dnn/SqueezeNet/v1.x
+    fn: synset_words.txt
+
+  - source: VGGNetSSD
+    folder: test/dnn/VGGNetSSD/VOC/
+    # % file = test/dnn/VGGNetSSD/VOC/deploy.prototxt
+    # % file = test/dnn/VGGNetSSD/VOC/VGG_VOC0712_SSD_300x300_iter_120000.caffemodel
+    # % url  = https://drive.google.com/open?id=0BzKzrI_SkD1_WVVTSmQxU0dVRzA
+    # % hash = 3ba17aa493f045cd5e7452b93f159a383635b614
+    # % size = 93.0 MB
+    # %
+    # % ## Classes
+    # %
+    
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/pascal-classes.txt
+    folder: test/dnn/VGGNetSSD/VOC
+    fn: pascal-classes.txt
+
+  - source: ILSVRC2016
+    folder: test/dnn/VGGNetSSD/ILSVRC/
+    # %
+    # % file = test/dnn/VGGNetSSD/ILSVRC/deploy.prototxt
+    # % file = test/dnn/VGGNetSSD/ILSVRC/VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel
+    # % url  = https://drive.google.com/open?id=0BzKzrI_SkD1_a2NKQ2d1d043VXM
+    # % hash = f77a8cac14e73a6b053fea51521ecea418ef2bf1
+    # % size = 178 MB
+
+  - url: https://github.com/weiliu89/caffe/raw/ssd/data/ILSVRC2016/labelmap_ilsvrc_det.prototxt
+    folder: test/dnn/VGGNetSSD/ILSVRC
+    fn: labelmap_ilsvrc_det.prototxt
+    sha1: 2f052e8260efb8eeca1ff6a64ce56d4e71b4a8f8
+
+  # URL ?
+  # - url: https://github.com/chuanqi305/MobileNet-SSD/raw/master/MobileNetSSD_deploy.prototxt
+  #   folder: test/dnn/MobileNetSSD/VOC
+  #   fn: MobileNetSSD_deploy.prototxt
+  #   sha1: d77c9cf09619470d49b82a9dd18704813a2043cd
+
+  # - url: https://drive.google.com/open?id=0B3gersZ2cHIxRm5PMWRoTkdHdHc
+  #   folder: test/dnn/MobileNetSSD/VOC
+  #   fn: MobileNetSSD_deploy.caffemodel
+  #   sha1: 994d30a8afaa9e754d17d2373b2d62a7dfbaaf7a
+
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/pascal-classes.txt
+    folder: test/dnn/MobileNetSSD/VOC/
+    fn: pascal-classes.txt
+
+  - url: https://github.com/opencv/opencv_extra/raw/3.3.1/testdata/dnn/ssd_mobilenet_v1_coco.pbtxt
+    folder: test/dnn/MobileNetSSD/COCO/
+    fn: ssd_mobilenet_v1_coco.pbtxt
+    sha1: f58916645baac2511f521332fbd574a71b8f80bf
+
+  - url: http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz
+    folder: test/dnn/MobileNetSSD/COCO/
+    fn: frozen_inference_graph.pb
+    sha1: a88a18cca9fe4f9e496d73b8548bfd157ad286e2
+
+  - url: https://github.com/tensorflow/models/blob/master/research/object_detection/data/mscoco_label_map.pbtxt
+    folder: test/dnn/MobileNetSSD/COCO/
+    fn: mscoco_label_map.pbtxt
+
+  # - url: https://github.com/pjreddie/darknet/raw/master/cfg/tiny-yolo.cfg
+  #   folder: test/dnn/YOLO/
+  #   fn: tiny-yolo.cfg
+  #   sha1: 8d281f1f80162e44d4af5d0911bfdf5667f8f20d
+
+  # - url: https://pjreddie.com/media/files/tiny-yolo.weights
+  #   folder: test/dnn/YOLO/
+  #   fn: tiny-yolo.weights
+  #   sha1:  b6c3ba64aa71af2fa78f964ce68e509ed0e75383
+
+  # - url: https://github.com/pjreddie/darknet/raw/master/cfg/tiny-yolo-voc.cfg
+  #   folder: test/dnn/YOLO/
+  #   fn: tiny-yolo-voc.cfg
+  #   sha1: d26e2408ce4e20136278411760ba904d744fe5b5
+
+  # - url: https://pjreddie.com/media/files/tiny-yolo-voc.weights
+  #   folder: test/dnn/YOLO/
+  #   fn: tiny-yolo-voc.weights
+  #   sha1: 24b4bd049fc4fa5f5e95f684a8967e65c625dff9
+
+  # - url: https://github.com/pjreddie/darknet/raw/master/cfg/yolo.cfg
+  #   folder: test/dnn/YOLO/
+  #   fn: yolo.cfg
+  #   sha1: 6ee14a8b854ce37c55ef4f9def90303a7cb53906
+
+  # - url: https://pjreddie.com/media/files/yolo.weights
+  #   folder: test/dnn/YOLO/
+  #   fn: yolo.weights
+  #   sha1: a2248b25c50307b4e2ba298473e05396e79df9d1
+ 
+  # - url: https://github.com/pjreddie/darknet/raw/master/cfg/yolo-voc.cfg
+  #   folder: test/dnn/YOLO/yolo-voc.cfg
+  #   sha1: 0150a4b4f018955aa98f2e38ef29ba2104ba74ea
+
+  # - url: https://pjreddie.com/media/files/yolo-voc.weights
+  #   folder: test/dnn/YOLO/
+  #   fn: yolo-voc.weights
+  #   sha1: 1cc1a7f8ad12d563d85b76e9de025dc28ac397bb
+
+  # - url: https://github.com/pjreddie/darknet/raw/master/data/coco.names
+  #   folder: test/dnn/YOLO/
+  #   fn: coco.names
+
+  # - url: https://github.com/pjreddie/darknet/raw/master/data/voc.names
+  #   folder: test/dnn/YOLO/
+  #   fn: voc.names
+
+  - url: https://github.com/opencv/opencv_extra/raw/3.4.0/testdata/dnn/faster_rcnn_vgg16.prototxt
+    folder: test/dnn/FasterRCNN/
+    fn: faster_rcnn_vgg16.prototxt
+    sha1: 40be8a41a6d5a16adf65b39f9a3aa2940b21d6bf
+
+  - url: http://www.cs.berkeley.edu/~rbg/faster-rcnn-data/faster_rcnn_models.tgz
+    folder: test/dnn/FasterRCNN/
+    fn: VGG16_faster_rcnn_final.caffemodel
+    # url  = https://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz
+    #sha1:  51bca62727c3fe5d14b66e9331373c1e297df7d1
+    sha1: b836b0b737cdcbb59dac08b037d3ab580804a77a
+
+  - url: https://github.com/opencv/opencv_extra/raw/3.4.0/testdata/dnn/faster_rcnn_zf.prototxt
+    folder: test/dnn/FasterRCNN/
+    fn: faster_rcnn_zf.prototxt
+    sha1: 373c358b22550fb2a89ed10ba41bbce8abd0e3ff
+
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/pascal-classes.txt
+    folder: test/dnn/FasterRCNN/
+    fn: pascal-classes.txt
+
+  - url: https://github.com/opencv/opencv_extra/raw/3.4.0/testdata/dnn/rfcn_pascal_voc_resnet50.prototxt
+    folder: test/dnn/RFCN/
+    fn: rfcn_pascal_voc_resnet50.prototxt
+    sha1: 5037174369f202d9d901fa43fc19dca36d0a051c
+ 
+  - url: https://1drv.ms/u/s!AoN7vygOjLIQqUWHpY67oaC7mopf
+    folder: test/dnn/RFCN/
+    fn: resnet50_rfcn_final.caffemodel
+    #sha1: bb3180da68b2b71494f8d3eb8f51b2d47467da3e
+    sha1: 9dfc669368bcaf67e8dd39c68bfa207001cb84e2
+    
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/pascal-classes.txt
+    folder: test/dnn/RFCN/
+    fn: pascal-classes.txt
+    
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/fcn8s-heavy-pascal.prototxt
+    folder: test/dnn/FCN/
+    fn: fcn8s-heavy-pascal.prototxt
+
+  - url: http://dl.caffe.berkeleyvision.org/fcn8s-heavy-pascal.caffemodel
+    folder: test/dnn/FCN/
+    fn: fcn8s-heavy-pascal.caffemodel
+    sha1: c449ea74dd7d83751d1357d6a8c323fcf4038962
+
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/pascal-classes.txt
+    folder: test/dnn/FCN/
+    fn: pascal-classes.txt
+
+  - url: https://github.com/e-lab/ENet-training/releases/download/v1.cs/model-cityscapes.net
+    folder: test/dnn/ENet/
+    fn: model-cityscapes.net
+    sha1: b4123a73bf464b9ebe9cfc4ab9c2d5c72b161315
+
+  - url: https://github.com/opencv/opencv/raw/3.3.1/samples/data/dnn/enet-classes.txt
+    folder: test/dnn/ENet/
+    fn: enet-classes.txt
+    
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/the_wave.t7
+    folder: test/dnn/StyleTransfer/eccv16/
+    fn: the_wave.t7
+    sha1: ae2235b7d380c346cd009418efa012453e35d089
+
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/starry_night.t7
+    folder: test/dnn/StyleTransfer/eccv16/
+    fn: starry_night.t7
+    sha1: 5b5e115253197b84d6c6ece1dafe6c15d7105ca6
+
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/la_muse.t7
+    folder: test/dnn/StyleTransfer/eccv16/
+    fn: la_muse.t7
+    sha1: 66a0b11a82d2b635105771ca7e7fb5b87692a51b
+ 
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/composition_vii.t7
+    folder: test/dnn/StyleTransfer/eccv16/
+    fn: composition_vii.t7
+    sha1: c3bc362a742d833c2691fb02fd7904bd73ed6632
+
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/candy.t7
+    folder: test/dnn/StyleTransfer/instance_norm/
+    fn: candy.t7
+    sha1: 64cf17abf37f4b3ac6773d8524dd3ba47a4ff5c2
+
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/la_muse.t7
+    folder: test/dnn/StyleTransfer/instance_norm/
+    fn: la_muse.t7
+    sha1: cab9697c54cbc652bd5069dc734a0200d2b88f03
+ 
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/mosaic.t7
+    folder: test/dnn/StyleTransfer/instance_norm/
+    fn: mosaic.t7
+    sha1: f4d3e2a5e3060b3c39a9648ad009de3e09cd0001
+
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/feathers.t7
+    folder: test/dnn/StyleTransfer/instance_norm/
+    fn: feathers.t7
+    sha1: 9838007df750d483b5b5e90b92d76e8ada5a31c0
+
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/the_scream.t7
+    folder: test/dnn/StyleTransfer/instance_norm/
+    fn: the_scream.t7
+    sha1: ae36b9289cab525657b97a4ea63609c338137da7
+
+  - url: https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/udnie.t7
+    folder: test/dnn/StyleTransfer/instance_norm/
+    fn: udnie.t7
+    sha1: db237afe0c2a08c93bb77f63c40d0fea8191c631
+
+
+build:
+  number: 0
+  noarch: generic
+
+
+about:
+#  home: https://github.com/kyamagu/mexopencv
+  license: BSD 3-clause
+  license_family: BSD
+  summary:
+    Package of deep neural nets used in mexopencv samples.
+  
