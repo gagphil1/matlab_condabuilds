@@ -1,5 +1,5 @@
-PGPACK-BUILD
-============
+matlab_condabuilds
+==================
 
 This is my solution for managing external Matlab (or Octave) libraries I want to try. It is based on conda packages.
 
