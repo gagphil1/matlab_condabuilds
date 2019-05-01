@@ -8,11 +8,11 @@ Install
 
 1) Install environment
 
-    conda create -n science_env conda m2-base
-    conda activate science_env
-    conda config --prepend channels -c gagphil1
-    conda install matlab_support
-    conda install mexopencv matlabfns vlfeat jsonlab matgeom pdollar yamlmatlab
+       conda create -n science_env conda m2-base
+       conda activate science_env
+       conda config --prepend channels -c gagphil1
+       conda install matlab_support
+       conda install mexopencv matlabfns vlfeat jsonlab matgeom pdollar yamlmatlab
 
 2) Prepare Matlab
     
