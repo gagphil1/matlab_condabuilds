@@ -1,4 +1,4 @@
-{% set version = "0.1" %}
+{% set version = "0.2" %}
 
 package:
   name: matlab_support
@@ -15,7 +15,7 @@ source:
     folder: scripts
 
 build:
-  number: 6
+  number: 1
   noarch: generic
   binary_relocation: False
   ignore_prefix_files: True

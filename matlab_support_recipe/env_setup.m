@@ -86,8 +86,8 @@ function add_library_paths(basedir, params)
         parts = prepend_missing(fullfile(env_dir, 'Library\bin'), parts);
         new_path = combine_parts(parts);
         setenv('PATH', new_path);
-    else isunix || ismac
-        disp('Not supported yet.');
+    elseif isunix || ismac
+        % Nothing to do. Conda will update dynamic libs paths.
     end
 end
 
