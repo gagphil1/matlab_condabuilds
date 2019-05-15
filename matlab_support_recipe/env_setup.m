@@ -42,6 +42,7 @@ function out = env_setup(varargin)
             end
         end
     elseif (nargin==0) || strcmpi(varargin{1}, '-setup')
+        add_library_paths(basedir, params);
         for i=1:length(libs)
             activate(libs{i}, basedir, params);
         end
@@ -67,6 +68,26 @@ function activate(lib, basedir, params)
     else
         lib_path = fullfile(basedir, lib);
         addpath(lib_path);
+    end
+end
+
+function add_library_paths(basedir, params)
+    if isfield(params, 'conda') && isfield(params.conda, 'path') ...
+        && ~isempty(params.conda.path)
+        env_dir = params.conda.path;
+    else
+        env_dir = fileparts(basedir);
+    end
+    
+    if ispc
+        prev_path = getenv('PATH');
+        parts = split(prev_path, ';');
+        
+        parts = prepend_missing(fullfile(env_dir, 'Library\bin'), parts);
+        new_path = combine_parts(parts);
+        setenv('PATH', new_path);
+    else isunix || ismac
+        disp('Not supported yet.');
     end
 end
 
@@ -106,22 +127,22 @@ function activate_conda(basedir, params)
     end
 end
 
-% After startconda
-%CONDA_DEFAULT_ENV=base
-%CONDA_EXE=C:\Users\gagphil1\anaconda\Scripts\conda.exe
-%CONDA_PREFIX=C:\Users\gagphil1\anaconda
-%CONDA_PROMPT_MODIFIER=(base)
-%CONDA_PYTHON_EXE=C:\Users\gagphil1\anaconda\python.exe
-%CONDA_SHLVL=1
-%PATH=/cygdrive/c/Users/gagphil1/anaconda:/cygdrive/c/Users/gagphil1/anaconda/Library/mingw-w64/bin:/cygdrive/c/Users/gagphil1/anaconda/Library/usr/bin:/cygdrive/c/Users/gagphil1/anaconda/Library/bin:/cygdrive/c/Users/gagphil1/anaconda/Scripts:/cygdrive/c/Users/gagphil1/anaconda/bin:/cygdrive/c/Users/gagphil1/anaconda/Scripts
-%
-% After activate science_env
-%CONDA_DEFAULT_ENV=science_env
-%CONDA_EXE=C:\Users\gagphil1\anaconda\Scripts\conda.exe
-%CONDA_PREFIX=C:\Users\gagphil1\anaconda\envs\science_env
-%CONDA_PREFIX_1=C:\Users\gagphil1\anaconda
-%CONDA_PROMPT_MODIFIER=(science_env)
-%CONDA_PYTHON_EXE=C:\Users\gagphil1\anaconda\python.exe
-%CONDA_SHLVL=2
-%PATH=/c/Users/gagphil1/anaconda/envs/science_env:/mingw-w64/bin:/usr/bin:/bin:/c/Users/gagphil1/anaconda/envs/science_env/Scripts:/c/Users/gagphil1/anaconda/envs/science_env/bin:/c/Users/gagphil1/anaconda:/c/Users/gagphil1/anaconda/Library/mingw-w64/bin:/c/Users/gagphil1/anaconda/Library/usr/bin:/c/Users/gagphil1/anaconda/Library/bin:/c/Users/gagphil1/anaconda/Scripts:/c/Users/gagphil1/anaconda/bin:/c/Users/gagphil1/anaconda/Scripts:
+function out = prepend_missing(new_path, path_list)
+    if ~any(strcmpi(path_list, new_path))
+        out = [new_path; path_list];
+    else
+        out = path_list;
+    end
+end
 
+function out = combine_parts(parts)
+    out = [];
+    for i=1:length(parts)
+        if exist(parts{i}, 'dir')==7
+            if ~isempty(out)
+                out = strcat(out, ';');
+            end
+            out = strcat(out, parts{i});
+        end
+    end
+end
