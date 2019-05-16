@@ -1,57 +1,36 @@
-PGPACK-BUILD
-============
+matlab_condabuilds
+==================
 
-Inspiration from major Conda package suites:
---------------------------------------------
+This is my solution for managing external Matlab (or Octave) libraries I want to try. It is based on conda packages.
 
-https://conda-forge.readthedocs.io/en/latest/
-https://bioconda.github.io/guidelines.html
-
-Runtime
+Install
 -------
 
-    conda index _path_to_pgpack/conda
-    conda create -n science_env conda m2-base
-    conda activate science_env
-    conda config --prepend channels file:///_path_to_pgpack/conda
-    conda install matlab_support
-    conda install mexopencv matlabfns vlfeat jsonlab matgeom pdollar yamlmatlab
+1) Install environment
 
+       conda create -n science_env conda m2-base
+       conda activate science_env
+       conda config --prepend channels -c gagphil1
+       conda install matlab_support
+       conda install mexopencv matlabfns vlfeat jsonlab matgeom pdollar yamlmatlab
 
+2) Prepare Matlab
+    
+Put the science_env directory in matlab path (%CONDA_PREFIX%\MATLAB or conda info --base). 
 
-Put the science_env in matlab path (%CONDA_PREFIX%\MATLAB or conda info --base). Then to update paths, type in  Matlab:
-    env_setup_env
+Then to update paths, type in Matlab: 
+    
+    env_setup
 
-
-
-OpenCV build package
-====================
-
-This is a recipe to build opencv and a binding for Matlab (or Octave).
-
-This package revision is for OpenCV 3.4.1
-
-Requirements
-------------
-
-You need anaconda installed and in the path.
-
-Build OpenCV
-------------
-
-You only need to run build_macos, build_win64 or build_linux.
-
-
+You can also put it in your startup.m file.
 
 Notes
 =====
 
 For octave 4: Need mingw 7.4: https://osdn.net/projects/mingw/releases/
 
+Inspiration from major Conda package suites:
+--------------------------------------------
 
-TODO
-====
-%addpath(fullfile(genextdir, 'libsvm', 'matlab'));
-%addpath(fullfile(extdir, 'mksqlite'));
-%addpath(fullfile(extdir, 'matconvnet'));
-%run(fullfile(genextdir, 'vlfeat', 'toolbox', 'vl_setup'));
+* https://conda-forge.readthedocs.io/en/latest/
+* https://bioconda.github.io/guidelines.html
