@@ -20,10 +20,12 @@ build:
   script_env:
   - MATLAB_ROOT_DIR
 
+requirements:
+  build:
+  - matlab_support
 
-#test:
-#  script_env:
-#  - MATLAB_ROOT_DIR
+  run:
+  - matlab_support
 
 about:
   home: http://www.cns.nyu.edu/~eero/steerpyr

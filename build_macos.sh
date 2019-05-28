@@ -4,4 +4,4 @@ export MATLAB_ROOT_DIR
 
 conda build $1 $2 $3 $4 $5 \
  --no-anaconda-upload \
- -c defaults
+ -c defaults -c gagphil1

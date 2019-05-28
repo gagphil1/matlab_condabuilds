@@ -22,9 +22,11 @@ requirements:
   build:
     - libopencv ={{ version }}
     - m2-patch      # [win64]
+    - matlab_support
   
   run:
     - libopencv ={{ version }}
+    - matlab_support
 
 #test:
 #  script_env:

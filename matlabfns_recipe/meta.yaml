@@ -9,8 +9,15 @@ source:
 #    git_rev: v{{ version }}
 
 build:
-  number: 5
+  number: 6
   noarch: generic
+
+requirements:
+  build:
+  - matlab_support
+
+  run:
+  - matlab_support
 
 about:
   home: http://www.peterkovesi.com/matlabfns/index.html

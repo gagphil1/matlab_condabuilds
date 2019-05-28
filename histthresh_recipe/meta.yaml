@@ -17,16 +17,12 @@ build:
   binary_relocation: False
   ignore_prefix_files: True
 
-#  script_env:
-#  - MATLAB_ROOT_DIR
+requirements:
+  build:
+  - matlab_support
 
-#requirements:
-#  build:
-#    - python >=3.6
-
-#test:
-#  script_env:
-#  - MATLAB_ROOT_DIR
+  run:
+  - matlab_support
 
 about:
   home: hhttps://github.com/carandraug/histthresh

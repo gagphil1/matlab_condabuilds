@@ -17,9 +17,11 @@ build:
 requirements:
   build:
   - vc 14            # [win64]
+  - matlab_support
 
   run:
   - vs2015_runtime   # [win64]
+  - matlab_support
 
 test:
   commands: 

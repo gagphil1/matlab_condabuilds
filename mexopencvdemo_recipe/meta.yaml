@@ -251,7 +251,7 @@ source:
     fn: VGG16_faster_rcnn_final.caffemodel
     # url  = https://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz
     #sha1:  51bca62727c3fe5d14b66e9331373c1e297df7d1
-    sha1: b836b0b737cdcbb59dac08b037d3ab580804a77a
+    #sha1: b836b0b737cdcbb59dac08b037d3ab580804a77a
 
   - url: https://github.com/opencv/opencv_extra/raw/3.4.0/testdata/dnn/faster_rcnn_zf.prototxt
     folder: test/dnn/FasterRCNN/
@@ -353,6 +353,13 @@ source:
 build:
   number: 0
   noarch: generic
+
+requirements:
+  build:
+  - matlab_support
+
+  run:
+  - matlab_support
 
 
 about:

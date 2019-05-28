@@ -18,13 +18,12 @@ build:
   script_env:
   - MATLAB_ROOT_DIR
 
-#requirements:
-#  build:
-#    - python >=3.6
+requirements:
+  build:
+  - matlab_support
 
-#test:
-#  script_env:
-#  - MATLAB_ROOT_DIR
+  run:
+  - matlab_support
 
 about:
   home: https://github.com/fangq/jsonlab
